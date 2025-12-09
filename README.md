@@ -10,21 +10,21 @@ This repository contains the data engineering pipeline used to prepare Colombia�
 
 ## 📁 Repository Structure
 
-colombia-grid-forecasting/  
-│  
-├─ src/  
-│  ├─ build_all_years.py                  (Transform raw Excel → wide hourly CSV)  
-│  └─ normalize_power.py                  (Normalize dataset with leak-free Z-scores)  
-│  
-├─ datasets/  
-│  ├─ raw/                                (Raw SEME Excel files 2020–2023)  
-│  ├─ transformed/                        (Wide dataset 2020–2023)  
-│  │   └─ sold_power_wide_2020_2023.csv  
-│  └─ normalized/                         (Normalization outputs)  
-│      ├─ sold_power_wide_2020_2023_normalized.csv  
-│      └─ sold_power_wide_normalization_params.csv  
-│  
-└─ docs/                                  (Flowcharts, diagrams, notes)
+colombia-grid-forecasting/
+│
+├─ src/
+│   ├─ build_all_years.py
+│   └─ normalize_power.py
+│
+├─ datasets/
+│   ├─ raw/
+│   ├─ transformed/
+│   │   └─ sold_power_wide_2020_2023.csv
+│   └─ normalized/
+│       ├─ sold_power_wide_2020_2023_normalized.csv
+│       └─ sold_power_wide_normalization_params.csv
+│
+└─ docs/
 
 ---
 
