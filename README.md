@@ -10,6 +10,7 @@ This repository contains the data engineering pipeline used to prepare Colombia�
 
 ## 📁 Repository Structure
 
+```text
 colombia-grid-forecasting/
 │
 ├─ src/
@@ -25,8 +26,7 @@ colombia-grid-forecasting/
 │       └─ sold_power_wide_normalization_params.csv
 │
 └─ docs/
-
----
+```
 
 ## 🔧 Environment Setup
 
