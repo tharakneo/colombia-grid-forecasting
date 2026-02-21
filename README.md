@@ -1,4 +1,4 @@
-# Predictive Anomaly Detection — Colombia Power Grid
+# Predictive Anomaly Detection - Colombia Power Grid
 
 **Capstone Project | RIT MS Data Science**  
 Authors: Tharak Bhupathi, Aparajita Pavan, Karthik Pachabatla  
@@ -70,8 +70,8 @@ python run_pipeline.py --data /path/to/your_data.csv
 ```
 
 ### 4. Check Outputs
-- `outputs/figures/anomaly_dashboard.png` — 8-panel dashboard
-- `outputs/figures/anomaly_deepdive.png` — Hour-by-hour top anomaly days
+- `outputs/figures/anomaly_dashboard.png` - 8-panel dashboard
+- `outputs/figures/anomaly_deepdive.png` - Hour-by-hour top anomaly days
 - `outputs/figures/shap_summary.png` — SHAP global importance
 - `outputs/figures/shap_waterfall_*.png` — Per-anomaly SHAP
 - `outputs/figures/lime_anomaly_*.png` — Per-anomaly LIME
