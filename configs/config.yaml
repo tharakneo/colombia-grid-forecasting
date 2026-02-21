@@ -1,0 +1,66 @@
+# ============================================================================
+# Colombia Power Grid Anomaly Detection — Configuration
+# ============================================================================
+# All parameters in one place. Change here, affects entire pipeline.
+
+data:
+  raw_path: "data/raw/sold_power_wide_2020_2023.csv"
+  processed_path: "data/processed/cleaned.csv"
+  features_path: "data/processed/features.csv"
+  z_scores_path: "data/processed/slot_z_scores.csv"
+  missing_threshold: 50  # Drop columns with >X% missing
+
+features:
+  # Slot = hour_of_week (168 slots: 24h × 7 days)
+  n_slots: 168
+  z_cap: 20              # Cap z-scores at ±20
+  z_threshold_mild: 3    # |z| > 3 = flagged
+  z_threshold_extreme: 5 # |z| > 5 = extreme
+  rolling_window: 6      # hours for volatility
+
+  model_features:
+    - mean_abs_slot_z
+    - max_slot_z
+    - n_flagged_3z
+    - n_flagged_5z
+    - total_power_slot_z
+    - delta_total
+    - rolling_vol_6h
+    - hhi
+    - top5_share
+
+models:
+  isolation_forest:
+    n_estimators: 300
+    contamination: 0.01
+    random_state: 42
+
+  ocsvm:
+    kernel: "rbf"
+    gamma: "scale"
+    nu: 0.01
+
+  # Future: EXAMM settings will go here
+  examm:
+    enabled: false
+    repo: "https://github.com/travisdesell/exact"
+
+reasons:
+  system_z_threshold: 3      # |total_power_slot_z| > 3
+  widespread_threshold: 10   # n_flagged_3z > 10
+  extreme_company_z: 10      # max_slot_z > 10
+  percentile_delta: 99       # top 1% sudden change
+  percentile_volatility: 99  # top 1% rolling volatility
+  percentile_hhi: 99         # top 1% concentration
+
+explainability:
+  shap_sample_size: 5000
+  lime_num_features: 9
+  top_k_anomalies: 10   # Explain top K anomalies
+  top_k_companies: 3    # Show top K contributors per anomaly
+
+output:
+  figures_dir: "outputs/figures"
+  reports_dir: "outputs/reports"
+  scores_dir: "outputs/scores"
+  dpi: 150
