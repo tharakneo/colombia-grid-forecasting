@@ -1,7 +1,7 @@
 # Predictive Anomaly Detection — Colombia Power Grid
 
 **Capstone Project | RIT MS Data Science**  
-Authors: Aparajita Pavan, Tharak Bhupathi, Karthik Pachabatla  
+Authors: Tharak Bhupathi, Aparajita Pavan, Karthik Pachabatla  
 Advisor: Dr. Travis Desell
 
 ## Project Structure
